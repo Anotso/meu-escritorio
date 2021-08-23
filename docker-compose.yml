@@ -1,0 +1,35 @@
+version: "3"
+services:
+  laravel_app:
+    container_name: "laravel_app"
+    build:
+      context: .docker/app/
+      dockerfile: Dockerfile
+    restart: "always"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/public
+    command:
+      -  chmod -R 777 storage
+    volumes:
+      - ./:/var/www
+    ports:
+      - "8900:80"
+    depends_on:
+      - laravel_db
+    links:
+      - laravel_db
+
+  laravel_db:
+    container_name: "laravel_db"
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./.docker/maindb:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
