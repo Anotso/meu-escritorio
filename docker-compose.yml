@@ -8,8 +8,8 @@ services:
     restart: "always"
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/public
-    command:
-      -  chmod -R 777 storage
+#    command:
+#      -  chmod -R 777 storage
     volumes:
       - ./:/var/www
     ports:
