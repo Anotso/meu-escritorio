@@ -1,0 +1,5 @@
+.home-footer{
+    position: fixed;
+    display: flexbox;
+    bottom: 0px;
+}
