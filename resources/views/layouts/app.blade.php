@@ -15,7 +15,7 @@
     @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
-    
+
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -134,14 +134,12 @@
         </footer>
     </div>
 
-    {{-- AdminLTE JS --}}
-    <script src="{{ asset('assets/plugins/jquery-3.6.0.min.js')}}"></script>
-    {{-- <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('assets/plugins/fontawesome/js/all.min.js')}}"></script>
-    <script src="{{ asset('assets/dist/js/adminlte.min.js')}}"></script> --}}
-        <script src="{{ asset('assets/plugins/bs/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
-    {{-- JS Custon --}}
-    @yield('script')
-</body>
+        {{-- AdminLTE JS --}}
+            <script src="{{ asset('assets/plugins/jquery-3.6.0.min.js')}}"></script>
+            <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+            <script src="{{ asset('assets/plugins/fontawesome/js/all.min.js')}}"></script>
+            <script src="{{ asset('assets/dist/js/adminlte.min.js')}}"></script>
+        {{-- JS Custon --}}
+            @yield('script')
+    </body>
 </html>

@@ -3,3 +3,10 @@
     display: flexbox;
     bottom: 0px;
 }
+.config{
+    position: fixed;
+    width:60px;
+	height:60px;
+    bottom: 10px;
+    left: 10px;
+}
